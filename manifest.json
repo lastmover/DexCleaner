@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "DexCleaner",
+  "version": "1.0",
+  "description": "Get rid of unwanted junk on dexscreener.",
+  "permissions": ["scripting"],
+  "host_permissions": ["*://dexscreener.com/*"],
+  "content_scripts": [{
+    "matches": ["*://dexscreener.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "world": "MAIN"
+  }]
+}
