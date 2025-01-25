@@ -3,20 +3,25 @@
 <head>
   <style>
     body {
-      width: 200px;
-      padding: 15px;
-      font-family: system-ui;
+      width: 220px;
+      padding: 20px;
+      font-family: 'Arial Black', sans-serif;
+      background-color: #d7fada;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 90px; /* Add bottom padding to make space for Pepe */
     }
     .toggle-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      margin-bottom: 15px;
     }
     .toggle-switch {
       position: relative;
       display: inline-block;
-      width: 40px;
-      height: 20px;
+      width: 50px;
+      height: 26px;
     }
     .toggle-switch input {
       opacity: 0;
@@ -30,26 +35,47 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #ccc;
+      background-color: #a8a8a8;
       transition: .4s;
-      border-radius: 20px;
+      border-radius: 26px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
     }
     .slider:before {
       position: absolute;
       content: "";
-      height: 16px;
-      width: 16px;
+      height: 22px;
+      width: 22px;
       left: 2px;
       bottom: 2px;
       background-color: white;
       transition: .4s;
       border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     input:checked + .slider {
-      background-color: #2196F3;
+      background-color: #5cb85c;
     }
     input:checked + .slider:before {
-      transform: translateX(20px);
+      transform: translateX(24px);
+    }
+    label[for] {
+      color: #3a543a;
+      font-weight: bold;
+      text-shadow: 0.5px 0.5px 0px rgba(255,255,255,0.5);
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: 10px; /* Closer to the bottom */
+      right: 10px; /* Closer to the right */
+      width: 70px; /* Slightly smaller Pepe */
+      height: 70px; /* Slightly smaller Pepe */
+      background-image: url('https://www.memeatlas.com/images/pepes/pepe-real-frog.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      z-index: -1;
+      background-color: transparent; /* No fallback color needed now */
     }
   </style>
 </head>
@@ -59,7 +85,7 @@
       <input type="checkbox" id="toggleBoosts">
       <span class="slider"></span>
     </label>
-    <label for="toggleBoosts">Hide Boost Elements</label>
+    <label for="toggleBoosts">Hide Boosted Elements</label>
   </div>
   <div class="toggle-container">
     <label class="toggle-switch">
