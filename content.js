@@ -1,25 +1,37 @@
-// content.js
-(function() {
+(function () {
   'use strict';
 
-  function init() {
-    // Create and inject styles only when document.head exists
-    const style = document.createElement('style');
-    style.textContent = `
+  let styleElement;
+
+  function toggleBoosts(hide) {
+    if (!styleElement) {
+      styleElement = document.createElement('style');
+      document.head.appendChild(styleElement);
+    }
+
+    styleElement.textContent = hide ? `
       .ds-dex-table-row-base-token-name-boosts {
         display: none !important;
       }
-      
       .ds-dex-table-row-base-token-symbol {
-        all: unset !important;
+        color: unset !important;
       }
-    `;
-
-    document.head.appendChild(style);
-    console.log('Boost UI elements hidden');
+    ` : '';
   }
 
-  // Wait for DOM to be ready
+  function init() {
+    chrome.storage.local.get(['dexcleaner-hide-boosts'], (result) => {
+      const hideBoosts = result['dexcleaner-hide-boosts'] !== false;
+      toggleBoosts(hideBoosts);
+    });
+
+    chrome.runtime.onMessage.addListener((message) => {
+      if (message.action === 'updateStyles') {
+        toggleBoosts(message.hideBoosts);
+      }
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
