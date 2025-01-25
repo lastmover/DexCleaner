@@ -3,13 +3,30 @@
   "name": "DexCleaner",
   "version": "1.0",
   "description": "Get rid of unwanted junk on dexscreener.",
-  "permissions": ["scripting"],
-  "host_permissions": ["*://dexscreener.com/*"],
-  "content_scripts": [{
-    "matches": ["*://dexscreener.com/*"],
-    "js": ["content.js"],
-    "run_at": "document_start",
-    "all_frames": true,
-    "world": "MAIN"
-  }]
+  "permissions": [
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.dexscreener.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "dc.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://dexscreener.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
 }
