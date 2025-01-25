@@ -9,8 +9,14 @@
     "tabs"
   ],
   "host_permissions": [
-    "*://*.dexscreener.com/*"
+    "*://*.dexscreener.com/*",
+    "*://api.dexscreener.com/*"
   ],
+  "web_accessible_resources": [{
+    "resources": ["x_icon.svg"],
+    "matches": ["*://*.dexscreener.com/*"],
+    "use_dynamic_url": true
+  }],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
