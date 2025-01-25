@@ -1,34 +1,41 @@
-# DexCleaner
+# DexCleaner  
 
-DexCleaner is a Chrome extension designed to declutter the Dexscreener website by hiding boosted elements and duplicate rows in token listings, providing a cleaner and more efficient browsing experience.
+DexCleaner is a Chrome extension I made to fix Dexscreener's annoying UI.  
 
-## Interface
+## Why?  
 
-The extension adds a simple popup interface to toggle the features on and off.
+Dexscreener kinda sucks sometimes:  
+1. Boosted tokens with wild colors are distracting.  
+2. Duplicate entries clutter the list.  
+3. Finding X links takes extra clicks, and that's all I care about most of the time.  
 
-![DexCleaner Interface](app.png)
+So, I made this extension to fix those issues.  
 
-## What it Does
+## What it Does  
 
-DexCleaner helps you focus on relevant information by removing visual clutter.
+DexCleaner:  
+✅ Strips ugly boost decorations (doesn't hide tokens).  
+✅ Cleans up duplicate rows.  
+✅ Adds direct X links right in the list.  
 
-**Before:**
+You can toggle these features however you like:  
 
-![Dexscreener before DexCleaner](before.png)
+![DexCleaner Interface](app.png)  
 
-**After:**
+**Before vs. After:**  
 
-![Dexscreener after DexCleaner](after.png)
+| Before | After |  
+|--------|-------|  
+| ![Before](before.png) | ![After](after.png) |  
 
-## Installation Instructions
+## How to Install  
 
-Since DexCleaner is not published on the Chrome Web Store, you can manually load it as an unpacked extension. Here are the steps:
+It's not on the Chrome Web Store, but you can add it manually. Here's how:  
 
-1.  **Download the Extension Files:** Download or clone this repository to your local machine.
-2.  **Open Chrome Extensions Page:** Open Google Chrome and navigate to `chrome://extensions/` in the address bar.
-3.  **Enable Developer Mode:** In the top right corner of the Extensions page, toggle the "Developer mode" switch to the ON position.
-4.  **Load Unpacked Extension:** Click the "Load unpacked" button that appears in the top left corner.
-5.  **Select Extension Directory:** In the file dialog, navigate to the directory where you downloaded or cloned the DexCleaner repository and select the folder. Click "Select Folder" or "Open".
-6.  **DexCleaner Installed:** DexCleaner should now be installed and enabled in Chrome. You can click the DexCleaner icon in your browser toolbar to toggle the features.
+1. **Download the Extension Files:** Download or clone this repo.  
+2. **Go to Chrome Extensions Page:** Open `chrome://extensions/` in Chrome.  
+3. **Enable Developer Mode:** Flip the "Developer mode" switch in the top right.  
+4. **Load Unpacked Extension:** Click "Load unpacked" and select the folder where you downloaded/cloned this repo.  
+5. **Done!** You'll see the DexCleaner icon in your browser toolbar. Click it to toggle features on/off.  
 
-Now you can enjoy a cleaner Dexscreener experience!
+Enjoy your cleaner Dexscreener experience!  
